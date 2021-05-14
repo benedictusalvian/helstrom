@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-# Helstrom
+# Helstrom &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/benedictusalvian/helstrom/blob/main/LICENSE.md) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/benedictusalvian/helstrom/issues)
 
 Helstrom is a quantum state distinguisher with minimum theoretical worst-case probablity of error.
 
@@ -8,6 +7,7 @@ Helstrom is a quantum state distinguisher with minimum theoretical worst-case pr
 - Distinguish two qubits with minimum worst-case error.
 - Obtain POVMs and min_pwc.
 - Support for qudits and entangled states coming soon!
+- PyPI package coming soon!
 
 ## Tech
 
