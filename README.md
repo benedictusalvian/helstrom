@@ -1,6 +1,6 @@
 # Helstrom &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/benedictusalvian/helstrom/blob/main/LICENSE.md) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/benedictusalvian/helstrom/issues)
 
-Helstrom is a quantum state distinguisher with minimum theoretical worst-case probablity of error.
+Helstrom is a quantum state distinguisher with minimum theoretical worst-case probability of error.
 
 ## Features
 
@@ -25,11 +25,11 @@ on GitHub.
 Helstrom has been developed and tested to run on [Python 3.8](https://www.python.org/downloads/release/python-3810/).
 
 Install [Python](https://www.python.org/downloads/release/python-3810/) if you have not already.
-Download the code as ZIP, and extract it.
+Download the code as ZIP, and extract it and enter the folder.
 Install the dependencies by typing the following command on your terminal:
 
 ```sh
-cd Helstrom # Change directory into Helstrom
+cd helstrom-main # Change directory into child directory
 pip install -r requirements.txt
 ```
 
