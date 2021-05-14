@@ -33,6 +33,7 @@ cd helstrom-main # Change directory into child directory
 pip install -r requirements.txt
 ```
 
+Note: MOSEK requires an academic license to operate. Academic faculty, students or staff gets free license. [Apply for a license.](https://www.mosek.com/products/academic-licenses/)
 Under the ``if __name__ == "__main__": `` heading, modify rho_0 and rho_1 to desired state.
 Now run ``helstromSDP.py`` directly, or via the following command on the terminal:
 ```sh
