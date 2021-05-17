@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name='helstrom',
     packages=['helstrom'],
-    version='0.1',
+    version='0.2',
     license='MIT',
     description=' A quantum state distinguisher with minimum theoretical worst-case probability of error.',
     long_description=README,
