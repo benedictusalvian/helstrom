@@ -31,6 +31,8 @@ You could install Helstrom via pip by running:
 pip install helstrom
 ```
 
+Note: MOSEK requires an academic license to operate. Academic faculty, students or staff gets free license. [Apply for a license.](https://www.mosek.com/products/academic-licenses/)
+
 Alternatively, download the code as ZIP, extract it, and enter the folder.
 Then, install the dependencies by typing the following command on your terminal:
 
@@ -42,6 +44,7 @@ pip install -r requirements.txt
 ## Examples
 
 Now run the following command on the terminal to use Helstrom's SDP and the results will be printed:
+
 ```sh
 python -m helstrom "1 0; 0 0" "1 0; 0 1"
 # Pass in desired states of rho_0 and rho_1 as two arguments
