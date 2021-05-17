@@ -1,5 +1,5 @@
 import pathlib
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -9,8 +9,8 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='helstrom',
-    packages=['helstrom'],
-    version='0.2',
+    packages=find_packages(),
+    version='0.2.1',
     license='MIT',
     description=' A quantum state distinguisher with minimum theoretical worst-case probability of error.',
     long_description=README,
@@ -30,6 +30,12 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
+        "Operating System :: OS Independent",
     ],
     include_package_data=True,
+    entry_points={
+        "console_scripts": [
+            "helstrom=helstrom.__main__:main",
+        ]
+    },
 )
