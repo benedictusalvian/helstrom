@@ -23,7 +23,7 @@ on GitHub.
 
 ## Installation
 
-Helstrom has been developed and tested to run on [Python 3.8](https://www.python.org/downloads/release/python-3810/).
+Helstrom has been developed and tested to run on [Python 3.8](https://www.python.org/downloads/).
 
 Install [Python](https://www.python.org/downloads/release/python-3810/) if you have not already.
 
