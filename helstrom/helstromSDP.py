@@ -3,22 +3,26 @@ import numpy as np
 
 
 def sdp(rho0, rho1):
-    n = 2
+    n = len(rho0)
     t = 0.5  # Since t is arbitrary, change to whatever you like.
-    C = np.zeros((4, 4))
-    C[0:2, 0:2] = (1 - t) * rho1.T
-    C[2:4, 2:4] = t * rho0.T
+    C = np.zeros((2 * n, 2 * n))
+    try:
+        C[0:n, 0:n] = (1 - t) * rho1.T
+        C[n:2 * n, n:2 * n] = t * rho0.T
+    except TypeError:
+        print("TypeError: can't multiply sequence by non-int of type 'float'.\nTry checking input states. Input states must be square matrices!")
+        return False
     A = []
     b = []
 
-    A0 = np.zeros((4, 4))
-    A0[0:2, 0:2] = rho1.T
-    A0[2:4, 2:4] = -1 * (rho0.T)
+    A0 = np.zeros((2 * n, 2 * n))
+    A0[0:n, 0:n] = rho1.T
+    A0[n:2 * n, n:2 * n] = -1 * (rho0.T)
     A.append(A0)
     b.append(0)
     for i in range(n):
         for j in range(n):
-            E = np.zeros((4, 4))
+            E = np.zeros((2 * n, 2 * n))
             E[i][j] = 1
             E[n + i][n + j] = 1
             A.append(E.T)
@@ -26,7 +30,7 @@ def sdp(rho0, rho1):
 
     # Define and solve the CVXPY problem.
     # Create a symmetric matrix variable.
-    X = cp.Variable((4, 4), symmetric=True)
+    X = cp.Variable((2 * n, 2 * n), symmetric=True)
     # The operator >> denotes matrix inequality.
     constraints = [X >> 0]
     constraints += [
@@ -45,23 +49,24 @@ def sdp(rho0, rho1):
     print(rho0)
     print("Input rho_1 is:")
     print(rho1)
-    print("The optimal value (min_pwc) is", prob.value)
-    print("A solution X (composed of P0 and P1) is")
     '''
     Change desired decimal places for solution here
     '''
+    value = round(prob.value, ndigits=5)
     solution = np.around(X.value, decimals=3)
+    print("The optimal value (min_pwc) is", value)
+    print("A solution X (composed of P0 and P1) is")
     print(solution)
     print("P0 is:")
-    print(solution[0:2, 0:2])
+    print(solution[0:n, 0:n])
     print("P1 is:")
-    print(solution[2:4, 2:4])
+    print(solution[n:2 * n, n:2 * n])
 
 
 if __name__ == "__main__":
     '''
     Change rho_0 and rho_1 here
     '''
-    rho0 = np.array([[1, 0], [0, 0]])
-    rho1 = np.array([[0.5, 0], [0, 0.5]])
+    rho0 = np.array([[1, 0, 0], [0, 0, 0], [0, 0, 0]])
+    rho1 = np.array([[0.333, 0, 0], [0, 0.333, 0], [0, 0, 0.333]])
     sdp(rho0, rho1)

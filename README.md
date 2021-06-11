@@ -7,7 +7,8 @@ Helstrom is a quantum state distinguisher with minimum theoretical worst-case pr
 - Distinguish two qubits with minimum worst-case error.
 - Obtain POVMs and min_pwc.
 - Now available on PyPI!
-- Support for qudits and entangled states coming soon!
+- Support for qudits now here!
+- Support for entangled states coming soon!
 
 ## Tech
 
@@ -33,7 +34,7 @@ pip install helstrom
 
 Note: MOSEK requires an academic license to operate. Academic faculty, students or staff gets free license. [Apply for a license.](https://www.mosek.com/products/academic-licenses/)
 
-Alternatively, download the code as ZIP, extract it, and enter the folder.
+Alternatively, to contribute, download the code as ZIP, extract it, and enter the folder.
 Then, install the dependencies by typing the following command on your terminal:
 
 ```sh
